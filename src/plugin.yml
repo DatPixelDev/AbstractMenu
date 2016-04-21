@@ -1,0 +1,7 @@
+name: AbstractMenu
+version: 1
+main: me.pyxled.abstractmenu.AbstractMenu
+commands:
+  inv:
+    usage: /<command>
+    description: Opens the example inventory.
