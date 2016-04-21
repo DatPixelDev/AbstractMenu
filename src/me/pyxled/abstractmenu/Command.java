@@ -15,7 +15,7 @@ public class Command implements CommandExecutor {
             return true;
         } else {
             Player p = (Player)cs;
-            MenuManager.getInstance().openMenu(p, "example_menu");
+            MenuManager.openMenu(p, "example_menu");
             return true;
         }
     }

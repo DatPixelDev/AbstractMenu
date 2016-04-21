@@ -13,26 +13,19 @@ import java.util.Map;
  * File created: 04/20/2016
  */
 public class MenuManager implements Listener {
-    private static MenuManager instance;
-    private Map<String, Menu> menus;
+    private static Map<String, Menu> menus;
 
     public MenuManager(){
         menus = new HashMap<>();
-        if(instance == null){
-            instance = new MenuManager();
-        }
         registerMenu("example_menu", new ExampleMenu());
-    }
-    public static MenuManager getInstance(){
-        return instance;
     }
     public void registerMenu(String id, Menu menu) {
         menus.put(id, menu);
     }
-    public Menu getMenu(String id){
+    public static Menu getMenu(String id){
         return menus.get(id);
     }
-    public void openMenu(Player p, String id){
+    public static void openMenu(Player p, String id){
         p.openInventory(getMenu(id).inv);
     }
     @EventHandler
