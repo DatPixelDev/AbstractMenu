@@ -23,6 +23,9 @@ public class MenuManager implements Listener {
     public void registerMenu(String id, Menu menu) {
         menus.put(id, menu);
     }
+    public static boolean menuExists(String menu){
+        return getMenu(menu) == null;
+    }
     public static Menu getMenu(String id){
         return menus.get(id);
     }
