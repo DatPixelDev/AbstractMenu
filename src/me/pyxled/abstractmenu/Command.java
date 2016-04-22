@@ -13,10 +13,15 @@ public class Command implements CommandExecutor {
     public boolean onCommand(CommandSender cs, org.bukkit.command.Command cmd, String s, String[] args) {
         if(!(cs instanceof Player)){
             return true;
-        } else {
-            Player p = (Player)cs;
-            MenuManager.openMenu(p, "example_menu");
-            return true;
         }
+        if(args.length == 0){
+            return true;
+        } else {
+            String menu = args[0];
+            if(MenuManager.menuExists(menu)){
+                MenuManager.openMenu((Player)cs, menu);
+            }
+        }
+        return true;
     }
 }
