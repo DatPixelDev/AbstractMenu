@@ -18,6 +18,7 @@ public class MenuManager implements Listener {
     public MenuManager(){
         menus = new HashMap<>();
         registerMenu("example_menu", new ExampleMenu());
+        registerMenu("give_menu", new GiveMenu());
     }
     public void registerMenu(String id, Menu menu) {
         menus.put(id, menu);
